@@ -1,8 +1,8 @@
 // include instead of use, so we get the pitch
 include <gridfinity_modules.scad>
 
-xsize = 5;
-ysize = 3;
+xsize = 3;
+ysize = 6;
 weighted = false;
 lid = false;
 
@@ -18,14 +18,15 @@ else {
 
 
 module base_lid(num_x, num_y) {
-  magnet_od = 6.5;
+  //magnet_od = 6.5;
+  magnet_od = 0;
   magnet_position = min(gridfinity_pitch/2-8, gridfinity_pitch/2-4-magnet_od/2);
   magnet_thickness = 2.4;
   eps = 0.1;
   
   translate([0, 0, 7]) frame_plain(xsize, ysize, trim=0.25);
   difference() {
-    grid_block(xsize, ysize, 1, magnet_diameter=0, screw_depth=0);
+    grid_block(xsize, ysize, 1, magnet_diameter=0, screw_depth=0, half_pitch=true);
     gridcopy(num_x, num_y) {
       cornercopy(magnet_position) {
         translate([0, 0, 7-magnet_thickness])
