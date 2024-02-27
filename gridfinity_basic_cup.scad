@@ -2,11 +2,11 @@
 use <gridfinity_cup_modules.scad>
 
 // X dimension in grid units
-width = 2; // [ 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
+width = 1.5; // [ 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10]
 // Y dimension in grid units
-depth = 1; // [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
+depth = 4; // [ 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10]
 // Z dimension (multiples of 7mm)
-height = 3;
+height = 6;
 // (Zack's design uses magnet diameter of 6.5)
 magnet_diameter = 0;  // .1
 // (Zack's design uses depth of 6)
@@ -34,7 +34,7 @@ efficient_floor = false;
 // When enabled, irregular subdivisions have to be defined in code
 irregular_subdivisions = false;
 // Enable to subdivide bottom pads to allow half-cell offsets
-half_pitch = false;
+half_pitch = true;
 // Remove some or all of lip
 lip_style = "normal";  // [ "normal", "reduced", "none" ]
 
