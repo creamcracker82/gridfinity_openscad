@@ -5,6 +5,7 @@ xsize = 3;
 ysize = 6;
 weighted = false;
 lid = false;
+half_pitch = true;
 
 if (lid) {
   base_lid(xsize, ysize);
@@ -26,13 +27,13 @@ module base_lid(num_x, num_y) {
   
   translate([0, 0, 7]) frame_plain(xsize, ysize, trim=0.25);
   difference() {
-    grid_block(xsize, ysize, 1, magnet_diameter=0, screw_depth=0, half_pitch=true);
+    grid_block(xsize, ysize, 1, magnet_diameter=0, screw_depth=0, half_pitch=half_pitch);
     gridcopy(num_x, num_y) {
       cornercopy(magnet_position) {
         translate([0, 0, 7-magnet_thickness])
         cylinder(d=magnet_od, h=magnet_thickness+eps, $fn=48);
       }
-    }
+    };
   }
 }
 
